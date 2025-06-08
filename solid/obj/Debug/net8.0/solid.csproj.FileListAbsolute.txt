@@ -1,0 +1,14 @@
+/Volumes/Data/NIX/solid/bin/Debug/net8.0/solid
+/Volumes/Data/NIX/solid/bin/Debug/net8.0/solid.deps.json
+/Volumes/Data/NIX/solid/bin/Debug/net8.0/solid.runtimeconfig.json
+/Volumes/Data/NIX/solid/bin/Debug/net8.0/solid.dll
+/Volumes/Data/NIX/solid/bin/Debug/net8.0/solid.pdb
+/Volumes/Data/NIX/solid/obj/Debug/net8.0/solid.GeneratedMSBuildEditorConfig.editorconfig
+/Volumes/Data/NIX/solid/obj/Debug/net8.0/solid.AssemblyInfoInputs.cache
+/Volumes/Data/NIX/solid/obj/Debug/net8.0/solid.AssemblyInfo.cs
+/Volumes/Data/NIX/solid/obj/Debug/net8.0/solid.csproj.CoreCompileInputs.cache
+/Volumes/Data/NIX/solid/obj/Debug/net8.0/solid.dll
+/Volumes/Data/NIX/solid/obj/Debug/net8.0/refint/solid.dll
+/Volumes/Data/NIX/solid/obj/Debug/net8.0/solid.pdb
+/Volumes/Data/NIX/solid/obj/Debug/net8.0/solid.genruntimeconfig.cache
+/Volumes/Data/NIX/solid/obj/Debug/net8.0/ref/solid.dll
