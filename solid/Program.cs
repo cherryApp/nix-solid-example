@@ -2,6 +2,7 @@
 using Solid.Ocp;
 using Solid.Lsp;
 using Solid.Isp;
+using Solid.Dip;
 
 namespace Solid
 {
@@ -10,34 +11,42 @@ namespace Solid
         static void Main(string[] args)
         {
             // SRP
-            var riport = new Report()
+            var report = new Report()
             {
                 Title = "Report title",
                 Content = "Report content",
             };
-            riport.Print();
-            riport.SaveToFile("report.txt");
+            new ReportPrinter().Print(report);
+            new ReportSaver().SaveToFile(report, "report.txt");
 
             // OCP
-            var discountCalculator = new DiscountCalculator();
-            var discount = discountCalculator.CalculateDiscount("", 100);
+            var discountCalculator = new DiscountCalculator(new RegularDiscount());
+            var discount = discountCalculator.CalculateDiscount(100);
             Console.WriteLine("Discount: {0}", discount);
 
             // LSP
-            var rectangle = new Rectangle();
-            var square = new Square();
+            var rectangle = new Rectangle() { Width = 10, Height = 20 };
+            var square = new Square() { Side = 10 };
             PrintArea(rectangle);
             PrintArea(square);
 
             // ISP
+            var humanWorker = new HumanWorker();
+            humanWorker.Work();
+            humanWorker.Eat();
 
+            var robotWorker = new RobotWorker();
+            robotWorker.Work();
+
+            // DIP
+            var logger = new ConsoleLogger();
+            var UserService = new UserService(logger);
+            UserService.RegisterUser("John");
 
         }
 
-        public static void PrintArea(Rectangle r)
+        public static void PrintArea(IShape r)
         {
-            r.Width = 5;
-            r.Height = 10;
             Console.WriteLine("Area: {0}", r.GetArea()); // Expected: 50
         }
     }

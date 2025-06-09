@@ -1,16 +1,36 @@
 namespace Solid.Ocp;
 
+public interface IDiscountStrategy
+{
+    double ApplyDiscount(double total);
+}
+
+public class RegularDiscount : IDiscountStrategy
+{
+    public double ApplyDiscount(double total) => total * 0.9;
+}
+
+public class PremiumDiscount : IDiscountStrategy
+{
+    public double ApplyDiscount(double total) => total * 0.8;
+}
+
+public class VIPDiscount : IDiscountStrategy
+{
+    public double ApplyDiscount(double total) => total * 0.7;
+}
+
 public class DiscountCalculator
 {
-    public double CalculateDiscount(string customerType, double total)
+    private readonly IDiscountStrategy _discountStrategy;
+
+    public DiscountCalculator(IDiscountStrategy discountStrategy)
     {
-        if (customerType == "Regular")
-            return total * 0.9;
-        else if (customerType == "Premium")
-            return total * 0.8;
-        else if (customerType == "VIP")
-            return total * 0.7;
-        else
-            return total;
+        _discountStrategy = discountStrategy;
+    }
+
+    public double CalculateDiscount(double total)
+    {
+        return _discountStrategy.ApplyDiscount(total);
     }
 }

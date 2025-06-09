@@ -1,21 +1,20 @@
 namespace Solid.Lsp;
 
-public class Rectangle
+public interface IShape
+{
+    int GetArea();
+}
+
+public class Rectangle : IShape
 {
     public virtual int Width { get; set; }
     public virtual int Height { get; set; }
     public int GetArea() => Width * Height;
 }
 
-public class Square : Rectangle
+public class Square : IShape
 {
-    public override int Width
-    {
-        set { base.Width = base.Height = value; }
-    }
+    public int Side { get; set; }
 
-    public override int Height
-    {
-        set { base.Width = base.Height = value; }
-    }
+    public int GetArea() => Side * Side;
 }

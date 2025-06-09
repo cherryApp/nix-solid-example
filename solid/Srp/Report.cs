@@ -6,16 +6,22 @@ namespace Solid.Srp
     {
         public required string Title { get; set; }
         public required string Content { get; set; }
+    }
 
-        public void SaveToFile(string path)
+    class ReportPrinter
+    {
+        public void Print(Report report)
         {
-            File.WriteAllText(path, Title + "\n" + Content);
+            Console.WriteLine(report.Title);
+            Console.WriteLine(report.Content);
         }
 
-        public void Print()
+    }
+    class ReportSaver
+    {
+        public void SaveToFile(Report report, string path)
         {
-            Console.WriteLine(Title);
-            Console.WriteLine(Content);
+            File.WriteAllText(path, report.Title + "\n" + report.Content);
         }
     }
 }

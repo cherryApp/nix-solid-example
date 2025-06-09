@@ -12,3 +12,4 @@
 /Volumes/Data/NIX/solid/obj/Debug/net8.0/solid.pdb
 /Volumes/Data/NIX/solid/obj/Debug/net8.0/solid.genruntimeconfig.cache
 /Volumes/Data/NIX/solid/obj/Debug/net8.0/ref/solid.dll
+/Volumes/Data/NIX/solid/obj/Debug/net8.0/solid.sourcelink.json
