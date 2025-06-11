@@ -2,6 +2,7 @@
 using Solid.Ocp;
 using Solid.Lsp;
 using Solid.Isp;
+using Solid.Dip;
 
 namespace Solid
 {
